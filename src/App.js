@@ -1,5 +1,6 @@
 // how to store a value  in a variable 
-
+import { data } from './data.js'
+// 
 
 // exercise one
 
@@ -79,8 +80,7 @@ console.log(str.length, "lenght")
 console.log(str.match('we'), "match")
 // console.log(str.matchAll(['we']), "matchAll")
 
-//find smallest number 
-let arr = [11, 2, 6, 9, 10, 12]
+
 
 const obj = {
     firstName: 'zahid',
@@ -92,67 +92,156 @@ const obj = {
 }
 console.log(obj.detail())
 
-let showData = document.getElementById('show')
 let searchData = document.getElementById('search')
 
-import { data } from './data.js'
 // const data = require('./data')
 var val;
-var card;
 
 function cardData() {
-
-
+    var card;
     console.log(data, "data")
     data.forEach((data) => {
         card += `
-<div class="card">
-<div class="cardhead">
-<div class="logo">${data.id}</div>
-<div class="title">${data.title}</div>
-</div>
-<div class="cardbody">
-    <img src=${data.img_path}  alt="">
-    </div>
-    </div>
-    `
+                <div class="card">
+                <div class="cardhead">
+                <div class="logo">${data.id}</div>
+                <div class="title">${data.title}</div>
+                </div>
+                <div class="cardbody">
+                    <img src=${data.img_path}  alt="">
+                    </div>
+                    </div>
+                    `
 
     })
-
-
-    // searchData.onkeyup = function () {
-
-    searchData.addEventListener('keypress', function () {
-        val = this.value
-        console.log(val, "searching")
-        const filterData = data?.filter((data) => {
-            if (data.title.toLowerCase().match(val.toLowerCase())) {
-                return data
-            }
-        })
-
-        console.log(filterData, "filter")
-
-        filterData?.forEach((data) => {
-            card += `
-    <div class="card">
-    <div class="cardhead">
-        <div class="logo">${data.id}</div>
-        <div class="title">${data.title}</div>
-    </div>
-    <div class="cardbody">
-        <img src=${data.img_path}  alt="">
-    </div>
-    </div>
-    `
-
-        })
-
-    })
-    showData.innerHTML = card
-
+    document.getElementById('show').innerHTML = card
 }
 cardData()
+
+// searchData.onkeyup = function () {
+
+searchData.addEventListener('keypress', function () {
+    val = this.value
+    console.log(val, "searching")
+    const filterData = data?.filter((data) => {
+        if (val == '') return console.log("zahid")
+        if (data.title.toLowerCase().match(val.toLowerCase())) {
+            return data
+        }
+    })
+
+    console.log(filterData, "filter")
+    var card;
+    filterData?.forEach((data) => {
+        card += `
+                    <div class="card">
+                    <div class="cardhead">
+                        <div class="logo">${data.id}</div>
+                        <div class="title">${data.title}</div>
+                    </div>
+                    <div class="cardbody">
+                        <img src=${data.img_path}  alt="">
+                    </div>
+                    </div>
+                    `
+
+    })
+    document.getElementById('show').innerHTML = card
+
+})
+
+
+
+
+
+
+
+// calculator with if else
+let user1 = 5
+let user2 = 3
+let total;
+const calculator = "Divide"
+
+if (calculator === "Add") {
+    console.log(total = user1 + user2)
+} else if (calculator === "Sub") {
+    console.log(total = user1 - user2)
+} else if (calculator === "Multiply") {
+    console.log(total = user1 * user2)
+} else if (calculator === "Divide") {
+    console.log(total = user1 / user2)
+} else {
+    console.log("you are enter invalid input")
+}
+
+// calulator with switch case
+
+switch (calculator) {
+    case 'Add':
+        console.log(total = user1 + user2);
+        break;
+    case 'Sub':
+        console.log(total = user1 - user2);
+        break;
+    case 'Divide':
+        console.log(total = user1 / user2, "switch");
+        break;
+    case 'Multiply':
+        console.log(total = user1 * user2);
+        break;
+    default: console.log("you are enter invalid input")
+}
+
+// ternary operator
+const age = 22;
+
+(age >= 18 ? console.log('Eligiable for vote') : console.log('not Eligiable for vote'))
+
+// how to concat two value with the help of back ticks or template litral
+
+let firstName = "Zahid"
+let lastName = "khan"
+
+console.log(`${firstName} ${lastName}`)
+
+
+// loop in javascript
+// there are 5 loops
+// do while loop
+//while loop
+//for loop
+// for in loop
+// for of loop
+
+let n = 10
+
+// while (n <= 10) {
+//     console.log(n)
+//     n++
+// }
+for (var i = 1; i <= 10; i++) {
+    console.log(user1 + "*" + i + "=" + i * user1)
+}
+let arr = [11, 2, 6, 9, 10, 12]
+var sum = 0
+for (let data of arr) {
+    if (data > 10) {
+        console.log(data, "data")
+        sum += data
+    }
+}
+console.log(sum, "sum")
+
+
+let obj1 = {
+    name: 'zahid',
+    address: 'noida',
+    phone: 99999
+}
+
+for (let mydata in obj1) {
+    console.log(mydata, ":", obj1[mydata])
+}
 
 
 
