@@ -9,4 +9,9 @@ export const data = [
         title: 'zahid khan',
         img_path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzUpajWthN-d-oFm__eR0jF8HuJLTd80cTHwyEaDV9tA&s'
     },
+    {
+        id: 3,
+        title: 'sanjeet pal',
+        img_path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzUpajWthN-d-oFm__eR0jF8HuJLTd80cTHwyEaDV9tA&s'
+    },
 ]
