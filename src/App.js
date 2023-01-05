@@ -102,12 +102,12 @@ function cardData() {
     console.log(data, "data")
     data.forEach((data) => {
         card += `
-                <div class="card">
+                <div class="card" >
                 <div class="cardhead">
                 <div class="logo">${data.id}</div>
                 <div class="title">${data.title}</div>
                 </div>
-                <div class="cardbody">
+                <div class="cardbody" onclick=${selectedData(data.id)}>
                     <img src=${data.img_path}  alt="">
                     </div>
                     </div>
@@ -117,6 +117,11 @@ function cardData() {
     document.getElementById('show').innerHTML = card
 }
 cardData()
+
+function selectedData(id) {
+    console.log(id, "id")
+    alert("hiih")
+}
 
 // searchData.onkeyup = function () {
 
